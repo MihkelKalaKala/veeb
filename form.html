@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang ="et">
+<head>
+        <meta charset="utf-8">
+        <title> Registreerimine </title>
+</head>
+<body>
+		<p><a href="http://robert.vkhk.ee/~mihkel.kala/enda/k6ik.php">Kõik sissekanded</a></p>
+		<form action="form.php" method="post" enctype="multipart/form-data">
+			<fieldset>
+				<legend>Isiklik informatsioon:</legend>
+				Eesnimi:<br>
+				<input type="text" name="enimi" maxlength="30" required><br>
+				Perenimi:<br>
+				<input type="text" name="pnimi" maxlength="30" required><br>
+				<br>
+				Sugu:<br>
+				<input type="radio" name="sugu" value="Mees" required>Mees<br>
+				<input type="radio" name="sugu" value="Naine"required>Naine<br>
+				<br>
+				Telefoni number:<br>
+				<input type="number" name="tel" maxlength="20" required><br>
+				E-Mail:<br>
+				<input type="email" name="epost" maxlength="100" required><br>
+				<br>
+				Lisa pilt:<br>
+                <input type="file" name="img" accept="image/*" required><br>
+				<br>
+				<br>
+				<input type="submit" value="Kinnita">
+			</fieldset>
+		</form>
+</body>
+</html>
