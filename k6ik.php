@@ -8,19 +8,18 @@
 		<p><a href="http://robert.vkhk.ee/~mihkel.kala/enda/form.html">Täida uus vorm</a></p>
         <?php
 			require "api.php";
-				$salvestatud = korraga();
+				$salvestatud = display_allitems();
 				$kkoos = '<table>';
 				foreach ($salvestatud as $yksik) {
 					$kkoos .= '
 					<tr>
-						<td>' . $yksik["isik"] . '</td>
-						<td><img src="andmebaas/' . $yksik["isik"] . '/pilt.jpg" height="50" width="50"></td>
+						<td><img src="db/' . $yksik["id"] . '/image.jpg" height="50" width="50"></td> 
 						<td>' . $yksik["enimi"] . '</td>
 						<td>' . $yksik["pnimi"] . '</td>
 						<td>
-							<a href="yksik.php?isik=' . $yksik["isik"] . '">Vaata</a>
-							<a href="muuda.php?isik=' . $yksik["isik"] . '">Muuda</a>
-							<a href="kustuta.php?isik=' . $yksik["isik"] . '">Kustuta</a>
+							<a href="yksik.php?id=' . $yksik["id"] . '">Vaata</a>
+							<a href="muuda.php?id=' . $yksik["id"] . '">Muuda</a>
+							<a href="kustuta.php?id=' . $yksik["id"] . '">Kustuta</a>
 						</td>
 					</tr>';
 				}

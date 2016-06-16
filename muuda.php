@@ -7,11 +7,11 @@
 <body>
 		<?php
 			require "api.php";
-			$isik = $_GET["isik"];
-			$andmed = vaata($isik);
+			$id = $_GET["id"];
+			$andmed = display_singleitem($id);
 		?>
 
-		<form action="form.php?isik=<?php print $andmed["isik"]; ?>" method="post" enctype="multipart/form-data">
+		<form action="form.php?id=<?php print $andmed["id"]; ?>" method="post" enctype="multipart/form-data">
 			<fieldset>
 				<legend>Isiklik informatsioon:</legend>
                 Eesnimi:<br>
@@ -29,7 +29,7 @@
 				<input type="email" name="epost" value="<?php print $andmed["epost"]; ?>" maxlength="100" autocomplete="off" required><br>
 				<br>
                 Pilt:<br>
-                <img src="<?php print "./andmebaas/$isik/pilt.jpg"; ?>" height="150" width="150"><br><br>
+                <img src="<?php print $andmed['img']; ?>" height="150" width="150"><br><br>
                 <input type="file" name="img" accept="image/*"><br>
 				<br>
 				<br>
