@@ -72,6 +72,7 @@
 			}
 
 			$aeg = time();
+			$aeg2 = time();
 
 			$andmed = fopen($kaust.'/info.json','w');
 			$info[] = array(
@@ -82,6 +83,7 @@
 				"tel" => $tel,
 				"epost" => $epost,
 				"aeg" => $aeg);
+				"aeg2" => $aeg2);
 
 			move_uploaded_file($fail, $kaust.'/pilt.jpg');
 			fwrite($andmed, json_encode($info));
@@ -126,8 +128,14 @@
 			$tel = $andmed["tel"];
 			$epost = $andmed["epost"];
 			$aeg = time(); 
-			$fail = $andmed["pilt"];     
-              
+			$fail = $andmed["pilt"];
+
+			$ajur = "./andmebaas/$isik/info.json";
+			$tajur = file_get_contents($ajur);
+			$ticktock = json_decode($tajur, true);
+			$ticktock = $ticktock[0];
+			$aeg2 = $ticktock["aeg2"];
+			
 			$asukoht = "./andmebaas/$isik";
 
 			$andmed = fopen($asukoht.'/info.json','w');
@@ -139,6 +147,7 @@
 				"tel" => $tel,
 				"epost" => $epost,
 				"aeg" => $aeg);
+				"aeg2" => $aeg2);
 
 				move_uploaded_file($fail, $asukoht.'/pilt.jpg');
 				fwrite($andmed, json_encode($info));
@@ -158,6 +167,7 @@
 			$andmed = json_decode($raha, true);
 			$andmed = $andmed[0];
 			$andmed["aeg"] = strftime("%d/%m/%Y %H:%M", $andmed["aeg"]);
+			$andmed["aeg2"] = strftime("%d/%m/%Y %H:%M", $andmed["aeg2"]);
 			return $andmed;
 		}
 		

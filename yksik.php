@@ -18,8 +18,8 @@
 			print "Sugu : ". $andmed["sugu"]. "<br>";
 			print "Telefoni number : ". $andmed["tel"]. "<br>";
 			print "E-Mail : ". $andmed["epost"]. "<br>";
-			print "Loomisaeg : ". $andmed["aeg"];
-
+			print "Viimati muudetud : ". $andmed["aeg"]. "<br>";
+			print "Loodud : ". $andmed["aeg2"];
 		?>
 </body>
 </html> 

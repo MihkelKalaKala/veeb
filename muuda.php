@@ -37,6 +37,7 @@
 			</fieldset>
 			<p><a href="http://robert.vkhk.ee/~mihkel.kala/enda/k6ik.php">Loobu ja mine tagasi</a></p>
                 Viimati muudetud: <?php print $andmed["aeg"]; ?><br>
+				Loodud: <?php print $andmed["aeg2"]; ?><br>
          </form>
 </body>
 </html>
