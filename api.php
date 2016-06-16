@@ -2,7 +2,7 @@
 	date_default_timezone_set('Europe/Tallinn');
 	
 	ini_set('display_errors',1);
-	error_reporting(E_ALL);
+    error_reporting(E_ALL);
 	
 	function addadvert($userdata) {
         $username = $userdata["username"];
@@ -13,7 +13,7 @@
 		$price = $userdata["price"];
 		$action = $userdata["action"];
         $description = $userdata["description"];
-        $file = $userdata["pilt"];
+        $file = $userdata["image"];
         $time = time();
         $folder = 'db/'. $time;
        
@@ -36,7 +36,7 @@
             "description" => $description);
 
 
-        move_uploaded_file($file, $folder . '/pilt.jpg');
+        move_uploaded_file($file, $folder . '/image.jpg');
         fwrite($userdata, json_encode($data));
         fclose($userdata);
 		}
@@ -82,7 +82,7 @@
 				"sugu" => $sugu,
 				"tel" => $tel,
 				"epost" => $epost,
-				"aeg" => $aeg);
+				"aeg" => $aeg,
 				"aeg2" => $aeg2);
 
 			move_uploaded_file($fail, $kaust.'/pilt.jpg');
@@ -100,7 +100,7 @@
 		$price = $userdata["price"];
 		$action = $userdata["action"];
         $description = $userdata["description"];
-        $file = $userdata["pilt"];
+        $file = $userdata["image"];
 
         $folder = "./db/$id";
         $userdata = fopen($folder . '/data.json','w');
@@ -115,7 +115,7 @@
 			"action" => $action,
             "description" => $description);
 
-        move_uploaded_file($file, $folder . '/pilt.jpg');
+        move_uploaded_file($file, $folder . '/image.jpg');
         fwrite($userdata, json_encode($data));
         fclose($userdata);
     }
@@ -127,9 +127,9 @@
 			$sugu = $andmed["sugu"];
 			$tel = $andmed["tel"];
 			$epost = $andmed["epost"];
-			$aeg = time(); 
-			$fail = $andmed["pilt"];
-
+			$aeg = time();
+			$fail = $andmed["pilt"];     
+            
 			$ajur = "./andmebaas/$isik/info.json";
 			$tajur = file_get_contents($ajur);
 			$ticktock = json_decode($tajur, true);
@@ -146,7 +146,7 @@
 				"sugu" => $sugu,
 				"tel" => $tel,
 				"epost" => $epost,
-				"aeg" => $aeg);
+				"aeg" => $aeg,
 				"aeg2" => $aeg2);
 
 				move_uploaded_file($fail, $asukoht.'/pilt.jpg');
