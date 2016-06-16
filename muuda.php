@@ -28,7 +28,9 @@
                 E-Mail:<br>
 				<input type="email" name="epost" value="<?php print $andmed["epost"]; ?>" maxlength="100" autocomplete="off" required><br>
 				<br>
-                Pilt:<br>
+				<textarea rows="5" cols="50" placeholder="Märkused " maxlength="200" name="markus" required><?php print $userdata["markus"]; ?></textarea><br>
+				<br>
+				Pilt:<br>
                 <img src="<?php print $andmed['img']; ?>" height="150" width="150"><br><br>
                 <input type="file" name="img" accept="image/*"><br>
 				<br>

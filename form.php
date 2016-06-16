@@ -8,6 +8,7 @@
 		"sugu" => $_POST['sugu'],
 		"tel" => $_POST['tel'],
 		"epost" => $_POST['epost'],
+		"markus" => $_POST['markus'],
 		"image" => $_FILES['img']['tmp_name']
 	);
 	if (isset($_GET["id"])) {

@@ -20,6 +20,7 @@ function addadvert($userdata) {
 	$sugu = $userdata["sugu"];
 	$tel = $userdata["tel"];
 	$epost = $userdata["epost"];
+	$markus = $userdata["markus"];
 	$time = time();
 	$folder = PATH . '/' . $time;
 	
@@ -45,6 +46,7 @@ function addadvert($userdata) {
 		"sugu" => $sugu,
 		"tel" => $tel,
 		"epost" => $epost,
+		"markus" => $markus,
 		"aeg" => $time,
 		"aeg2" => $time);
 
@@ -70,6 +72,7 @@ function change_singleitem($userdata) {
 	$sugu = $userdata["sugu"];
 	$tel = $userdata["tel"];
 	$epost = $userdata["epost"];
+	$markus = $userdata["markus"];
 	$aeg = time();
             
 	$ajur = './' . PATH . "/$id/data.json";
@@ -95,6 +98,7 @@ function change_singleitem($userdata) {
 		"sugu" => $sugu,
 		"tel" => $tel,
 		"epost" => $epost,
+		"markus" => $markus,
 		"aeg" => $aeg,
 		"aeg2" => $aeg2);
 
